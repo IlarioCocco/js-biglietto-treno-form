@@ -32,6 +32,10 @@ body {
     /* margin-top: 40px; */
 }
 
+.type-stampa.open {
+    display: block;
+}
+
 .titolo-calcola {
     text-align: center;
     color: white;

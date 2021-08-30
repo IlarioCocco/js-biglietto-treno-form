@@ -1,5 +1,6 @@
 // 1 seleziona i bottoni
 var bottoneGenera = document.getElementById("genera");
+var bottoneAnulla = document.getElementById("genera");
 
 // 2 click del bottone genera
 bottoneGenera.addEventListener("click",
@@ -24,7 +25,7 @@ bottoneGenera.addEventListener("click",
         // stampo i dati nel div del biglietto
 
         // inserisco il nome del passeggero
-        document.getElementById("nomePasseggero").innerHTML = nome;
+        document.getElementById("nome").innerHTML = nome;
 
         // inserisco il tipo di offerta
         document.getElementById("tipoOfferta").innerHTML = tipoOfferta;
@@ -37,5 +38,21 @@ bottoneGenera.addEventListener("click",
 
         // inserisco codice cp
         document.getElementById("codiceCp").innerHTML = codiceCp;
+
+
+        document.getElementById("type-stampa").classList.add()
     }
+);
+
+//  dopo il click del bottone annulla
+bottoneAnulla.addEventListener("click",
+function() {
+    // nascondi il biglietto
+    document.getElementById("type-stampa").classList.remove("open")
+
+    // reset tutto
+    document.getElementById("nome").Value = "";
+    document.getElementById("km").Value = "";
+    document.getElementById("fascia").Value = "";
+}
 );
