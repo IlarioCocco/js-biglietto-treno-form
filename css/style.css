@@ -22,16 +22,19 @@ body {
     padding: 30px;
     text-align: center;
     border-radius: 10px;
+    margin-top: 39px;
 }   
 
 .type-stampa {
     background-color: white;
     padding: 30px;
     text-align: center;
+    /* margin-top: 40px; */
 }
 
 .titolo-calcola {
     text-align: center;
     color: white;
+    margin-top: 40px;
 }
 
