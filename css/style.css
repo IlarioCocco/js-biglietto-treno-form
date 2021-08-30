@@ -14,7 +14,7 @@ body {
     margin: auto;
 }
 
-.type-biglietto {
+.type-biglietto, .type-biglietto-bottoni {
     background-color: white;
     padding: 30px;
     text-align: center;
