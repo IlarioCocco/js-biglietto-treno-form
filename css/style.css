@@ -9,13 +9,28 @@ body {
     background-color: brown;
 }
 
-.container {
+.container-uno {
     max-width: 80%;
     margin: auto;
 }
 
-.type-biglietto, .type-biglietto-bottoni {
+
+.type-biglietto,
+.type-biglietto-bottoni {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}   
+
+.type-stampa {
     background-color: white;
     padding: 30px;
     text-align: center;
 }
+
+.titolo-calcola {
+    text-align: center;
+    color: white;
+}
+

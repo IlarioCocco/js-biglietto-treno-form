@@ -10,27 +10,43 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="type-biglietto">
-            <label for="nome">Nome Cognome</label>
-            <input type="text" name="nome" id="nome" placeholder="Inserisci il tuo Nome">
-
-            <label for="km">Km da percorrere</label>
-            <input type="numero" name="km" id="km" placeholder="Inserisci i Km">
-
-            <label for="fascia">fascia d'età</label>
+    <div class="container-uno">
+        <!-- formato biglietto -->
+        <div class="biglietto">
+            <h1 class="titolo-calcola">Calcola il prezzo del tuo biglietto</h1>
+            <div class="type-biglietto">
+                <label for="nome">Nome Cognome</label>
+                <input type="text" name="nome" id="nome" placeholder="Inserisci il tuo Nome">
+            
+                <label for="km">Km da percorrere</label>
+                <input type="numero" name="km" id="km" placeholder="Inserisci i Km">
+            
+                <label for="fascia">fascia d'età</label>
                 <select name="fascia" id="fascia">
                     <option value="minorenne">Minorenne</option>
                     <option value="maggiorenne">Maggiorenne</option>
                     <option value="over">Over 65</option>
                 </select>
+                <div class="type-biglietto-bottoni">
+                    <button id="genera">Genera</button>
+                    <button id="annulla">Annulla</button>
+                </div>
+            </div>
         </div>
-        <div class="type-biglietto-bottoni">
-            <button id="genera">Genera</button>
-            <button id="annulla">Annulla</button>
+    </div>
+        <!-- formato bottoni -->
+            
         </div>
 
-    </div>
+        <h1 class="titolo-calcola">Il tuo biglietto</h1>
+        <div class="type-stampa">
+            <div id="nomePasseggero">Ilario Cocco</div>
+            <div id="tipoOfferta">Offerta</div>
+            <div id="carrozza">Carrozza</div>
+            <div id="codiceCp">Codoce CP</div>
+            <div id="totale">Costo Biglietto</div>
+        </div>
+    
 
 
 
