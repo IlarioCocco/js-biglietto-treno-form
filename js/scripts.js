@@ -14,18 +14,26 @@ bottoneGenera.addEventListener("click",
 
         console.log(km);
 
+        
+        var sconto= 0;
+        var prezzo= km * 0.21;
+        
+
         // calcoloo il prezzo in base all'età
-        if (fascia == "minorenne") {
+        if (fascia < 18) {
+            sonto = prezzo * 20 / 100;
         // prezzo biglietto - 20%     
-        } else if ( fascia == "over") {
+        } else if ( fascia >= 65) {
+            sconto = prezzo * 40 / 100;
         // prezzo biglietto - 40%
         } else {
         // prezzo normale
+            prezzo = prezzo - sconto
         }
         // stampo i dati nel div del biglietto
 
         // inserisco il nome del passeggero
-        document.getElementById("nome").innerHTML = nome;
+        document.getElementById("nomePasseggero").innerHTML = nomePasseggero;
 
         // inserisco il tipo di offerta
         document.getElementById("tipoOfferta").innerHTML = tipoOfferta;
