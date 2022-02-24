@@ -1,66 +1,77 @@
-// 1 seleziona i bottoni
-var bottoneGenera = document.getElementById("genera");
-var bottoneAnulla = document.getElementById("genera");
 
-// 2 click del bottone genera
-bottoneGenera.addEventListener("click",
-    function() {
-        // logica generazione biglietto
+// seleziono i bottoni EVENTI PRINCIPALI
+var bottone = document.getElementById("genera");
+var bottoneAnnulla = document.getElementById("annulla");
 
-        // prendo i vlaori 
-        var nome = document.getElementById("nome").Value;
-        var km = parseInt(document.getElementById("km")).Value;
-        var fascia = document.getElementById("fascia").Value;
-
-        console.log(km);
-
-        
-        var sconto= 0;
-        var prezzo= km * 0.21;
-        
-
-        // calcoloo il prezzo in base all'età
-        if (fascia < 18) {
-            sonto = prezzo * 20 / 100;
-        // prezzo biglietto - 20%     
-        } else if ( fascia >= 65) {
-            sconto = prezzo * 40 / 100;
-        // prezzo biglietto - 40%
-        } else {
-        // prezzo normale
-            prezzo = prezzo - sconto
-        }
-        // stampo i dati nel div del biglietto
-
-        // inserisco il nome del passeggero
-        document.getElementById("nomePasseggero").innerHTML = nomePasseggero;
-
-        // inserisco il tipo di offerta
-        document.getElementById("tipoOfferta").innerHTML = tipoOfferta;
-
-        // inserisco il prezzo
-        document.getElementById("totale").innerHTML = totale;
-
-        // inserisco carrozza 
-        document.getElementById("carrozza").innerHTML = carrozza;
-
-        // inserisco codice cp
-        document.getElementById("codiceCp").innerHTML = codiceCp;
+// tramite funzione callback genero un evento sul bottone con il click
+bottone.addEventListener('click',
+function(){
+// internamente tutta la logica generazione biglietto
+// prendo i  VALORI DI CAMPO DI INPUT SELECT
+var nome = document.getElementById("nome").value;
+var km = parseInt(document.getElementById("km").value);
+var fasciaEta = document.getElementById("fascia").value;
+//  console.log(typeof(nome)); debuging
+//  console.log(nome); debuging
 
 
-        document.getElementById("type-stampa").classList.add()
-    }
-);
+// un minimo di verifica per capire se l utente sta inserendo dati opportuni e corretti
+if ( nome != "" && isNaN(nome) && !isNaN(km) && km > 0 ) {
 
-//  dopo il click del bottone annulla
-bottoneAnulla.addEventListener("click",
-function() {
-    // nascondi il biglietto
-    document.getElementById("type-stampa").classList.remove("open")
+var prezzo = km * 0.21;
+var tipoOfferta = "Biglietto Standard";
+// calcolo il biglietto in base alla fascia d'età
+if (fasciaEta == "minorenne") {
+prezzo = prezzo - (prezzo * 0.3);
+tipoOfferta = "Sconto Minori";
 
-    // reset tutto
-    document.getElementById("nome").Value = "";
-    document.getElementById("km").Value = "";
-    document.getElementById("fascia").Value = "";
+} else if (fasciaEta == "over") {
+prezzo = prezzo - (prezzo * 0.5);
+tipoOfferta = "Sconto Silver";
+
+} else {
+tipoOfferta = "Prezzo Base";
 }
-);
+prezzo = prezzo.toFixed(2);  // arrotondo con toFixed per avere numerri decimali (esempio = 5,00)
+
+
+
+// stampo tutti i dati nel div del biglietto
+// innietto: 
+// nome, offerta, numeri random, costo biglietto.
+document.getElementById("nomePasseggero").innerHTML = nome;
+
+document.getElementById("tipoOfferta").innerHTML = tipoOfferta;
+
+var numeroRandom = (Math.floor(Math.random() * 10) + 1);
+document.getElementById("numeroCarrozza").innerHTML = numeroRandom;
+
+var numeroRandom = (Math.floor(Math.random() * (99999 - 90000)) + 90000 );
+document.getElementById("numeroCp").innerHTML = numeroRandom;
+
+document.getElementById("tot").innerHTML = prezzo;
+
+
+
+// visualizzo biglietto
+document.getElementById("biglietto").classList.add("open");
+
+} else {
+alert("ERRORE! RIPROVA..");
+}
+});
+
+
+
+// nascondo il biglietto con remove
+bottoneAnnulla.addEventListener("click",
+function(){
+// nascondo il biglietto con remove
+document.getElementById("biglietto").classList.remove("open");
+
+
+var nome = document.getElementById("nome").value = "";
+var km = parseInt(document.getElementById("km").value = "");
+var fasciaEta = document.getElementById("fascia").selectedIndex = "0";
+
+});

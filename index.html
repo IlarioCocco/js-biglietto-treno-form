@@ -10,44 +10,67 @@
 </head>
 
 <body>
-    <div class="container-uno">
-        <!-- formato biglietto -->
-        <div class="biglietto">
-            <h1 class="titolo-calcola">Calcola il prezzo del tuo biglietto</h1>
-            <div class="type-biglietto">
-                <label for="nome">Nome Cognome</label>
-                <input type="text" name="nome" id="nome" placeholder="Inserisci il tuo Nome">
-            
-                <label for="km">Km da percorrere</label>
-                <input type="numero" name="km" id="km" placeholder="Inserisci i Km">
-            
-                <label for="fascia">fascia d'età</label>
-                <select name="fascia" id="fascia">
-                    <option value="minorenne">Minorenne</option>
-                    <option value="maggiorenne">Maggiorenne</option>
-                    <option value="over">Over 65</option>
-                </select>
-                <div class="type-biglietto-bottoni">
-                    <button id="genera">Genera</button>
-                    <button id="annulla">Annulla</button>
+    <!-- ESERCIZIO BIGLIETTO DEL TRENO -->
+        
+        <section>
+            <h3 class="calcola">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h3>
+                <section class="box">
+                    <div class="formLimite">
+                        
+                        
+                        <div class="areaForm">
+                            <h4 class="descritiva" for="nome">Nome Cognome</h4>
+                            <input class="form" type="text" name="nome" id="nome" placeholder="Inserisci il tuo nome">
+                        </div>
+
+                        <div class="areaForm">
+                            <h4 class="descritiva" for="km">Km da percorrere</h4>
+                            <input class="form" type="number" name="km" id="km" placeholder="Inserisci i Km">
+                        </div>
+                        
+                        <div class="areaForm">
+                            <h4 class="descritiva" for="fascia">Fascia d'età</h4>
+                            <select class="form" name="fascia" id="fascia">
+                                <option selected>Inserisci età</option>
+                                <option value="minorenne">Minorenne</option>
+                                <option value="maggiorenne">Maggiorenne</option>
+                                <option value="over">Over 65</option>
+                            </select>
+                        </div>
+                    </div>
+
+               
+                    <div class="btn">
+                        <button id="genera" >Genera</button>
+                        <button id="annulla">Annulla</button>
+                    </div>
+                </section>
+
+                
+                <h3 class="ilTuo">IL TUO BIGLIETTO</h3>
+                <div id="biglietto" class="biglietto" >
+                    <div class="ticketNome">
+                        <h2>NOME PASSEGGERO</h2>
+                        <h4 id="nomePasseggero"></h4>
+                    </div>
+                    <div class="ticket">
+                        <h2>Offerta</h2>
+                        <h4 id="tipoOfferta"></h4>
+                    </div>
+                    <div class="ticket">
+                        <h2>Carrozza</h2>
+                        <h4>N° <span id="numeroCarrozza">--</span></h4>
+                    </div>
+                    <div class="ticket">
+                        <h2>Cod. CP</h2>
+                        <h4 id="numeroCp">-- --</h4>
+                    </div>
+                    <div class="ticket">
+                        <h2>Costo del Biglietto</h2>
+                        <h4><span id="tot"></span> €</h4>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-      
-        </div>
-    <div class="container-due">
-        <h1 class="titolo-calcola">Il tuo biglietto</h1>
-        <div id="type-stampa" class="type-stampa">
-            <div id="nomePasseggero"></div>
-            <div id="tipoOfferta">Offerta</div>
-            <div id="carrozza">Carrozza</div>
-            <div id="codiceCp">Codoce CP</div>
-            <div id="totale">21</div>
-        </div>
-
-    </div>
+        </section> 
        
 
     <script src="js/scripts.js"></script>
